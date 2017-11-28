@@ -31,10 +31,10 @@ void loop() {
   Nefry.println(isOn);
 
   if(isOn.indexOf("on") != -1 && currentState.indexOf("off") != -1){
-    Nefry.println("点灯点灯点灯！！！！！！！！！！！！！！！！！！！！！！！");
+//    Nefry.println("点灯点灯点灯！！！！！！！！！！！！！！！！！！！！！！！");
     turnOn();
   }else if(isOn.indexOf("off") != -1 && currentState.indexOf("on") != -1){
-    Nefry.println("消灯消灯消灯！！！！！！！！！！！！！！！！！！！！！！！");
+//    Nefry.println("消灯消灯消灯！！！！！！！！！！！！！！！！！！！！！！！");
     turnOff();
   }
 
@@ -50,12 +50,12 @@ void loop() {
 }
 
 void turnOn(){
-  ledcWrite(1, deg2pw(120, PWM_BITWIDTH));
+  ledcWrite(1, deg2pw(80, PWM_BITWIDTH));
   Notify(true);
 }
 
 void turnOff(){
-  ledcWrite(1, deg2pw(60, PWM_BITWIDTH));
+  ledcWrite(1, deg2pw(120, PWM_BITWIDTH));
   Notify(false);
 }
 
